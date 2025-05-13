@@ -1,0 +1,67 @@
+<!-- templates/poo_vehiculos.html -->
+{% extends 'base.html' %}
+
+{% block title %}POO: Vehículos - Guía de Python{% endblock %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h1>Programación Orientada a Objetos: Vehículos</h1>
+  <p>Este ejemplo real extiende el uso de clases en Python aplicándolo a diferentes tipos de vehículos, con atributos y comportamientos personalizados.</p>
+
+  <h2 class="mt-4">Clase base: <code>Vehiculo</code></h2>
+  <pre><code class="language-python">
+class Vehiculo:
+    def __init__(self, marca, modelo):
+        self.marca = marca
+        self.modelo = modelo
+
+    def mostrar_info(self):
+        print(f"{self.marca} - {self.modelo}")
+    </code></pre>
+
+  <h2 class="mt-4">Clase: <code>Embarcacion</code></h2>
+  <pre><code class="language-python">
+from Vehiculos import Vehiculo
+
+class Embarcacion(Vehiculo):
+    def __init__(self, marca, modelo, eslora):
+        super().__init__(marca, modelo)
+        self.eslora = eslora
+
+    def mostrar_info(self):
+        super().mostrar_info()
+        print(f"Eslora: {self.eslora} metros")
+    </code></pre>
+
+  <h2 class="mt-4">Clase: <code>Ferri</code></h2>
+  <pre><code class="language-python">
+from Embarcacion import Embarcacion
+
+class Ferri(Embarcacion):
+    def __init__(self, marca, modelo, eslora, capacidad_pasajeros):
+        super().__init__(marca, modelo, eslora)
+        self.capacidad_pasajeros = capacidad_pasajeros
+
+    def mostrar_info(self):
+        super().mostrar_info()
+        print(f"Capacidad: {self.capacidad_pasajeros} pasajeros")
+    </code></pre>
+
+  <h2 class="mt-4">Uso en <code>main.py</code></h2>
+  <pre><code class="language-python">
+from Ferri import Ferri
+
+f1 = Ferri("Balearia", "FastFerry", 120, 500)
+f1.mostrar_info()
+    </code></pre>
+
+  <h4>Resultado esperado:</h4>
+  <pre><code>
+Balearia - FastFerry
+Eslora: 120 metros
+Capacidad: 500 pasajeros
+    </code></pre>
+
+  <p class="mt-4">Este ejemplo representa herencia multinivel y cómo especializar clases hijas añadiendo atributos adicionales y sobrescribiendo métodos.</p>
+</div>
+{% endblock %}

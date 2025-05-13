@@ -1,0 +1,22 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+
+{% block title %}Inicio - Guía de Python{% endblock %}
+
+{% block content %}
+<div class="p-4 mb-4 bg-white rounded shadow-sm">
+  <h1 class="display-4">Bienvenido a la Guía de Python</h1>
+  <p class="lead">Esta guía ha sido creada con Flask y Bootstrap para ayudarte a repasar y consolidar todo lo aprendido en clase sobre Python.</p>
+  <hr>
+  <p>A lo largo de las diferentes secciones verás ejemplos reales que has trabajado, organizados en bloques temáticos:</p>
+  <ul>
+    <li><strong>Condicionales:</strong> Uso de <code>if</code>, <code>elif</code> y <code>else</code>.</li>
+    <li><strong>Bucles:</strong> Repetición de acciones con <code>for</code> y <code>while</code>.</li>
+    <li><strong>Estructuras:</strong> Listas, tuplas, diccionarios, conjuntos.</li>
+    <li><strong>Comprensiones:</strong> Sintaxis avanzada para crear estructuras de datos.</li>
+    <li><strong>POO - Animales:</strong> Programación orientada a objetos con ejemplos de clases y herencia.</li>
+    <li><strong>POO - Vehículos:</strong> Proyecto aplicado con herencia y especialización.</li>
+  </ul>
+  <p class="mt-4">Usa el menú de navegación superior para explorar cada sección.</p>
+</div>
+{% endblock %}

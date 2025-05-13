@@ -1,0 +1,56 @@
+<!-- templates/comprensiones.html -->
+{% extends 'base.html' %}
+
+{% block title %}Comprensiones - Guía de Python{% endblock %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h1>Comprensiones en Python</h1>
+  <p>Las comprensiones permiten crear estructuras de datos como listas, diccionarios o conjuntos de forma compacta y eficiente.</p>
+
+  <!-- LIST COMPREHENSION -->
+  <h2 class="mt-4">List Comprehension</h2>
+  <p>Ejemplo real para generar una lista de cuadrados:</p>
+  <pre><code class="language-python">
+cuadrados = [x**2 for x in range(1, 6)]
+print(cuadrados)
+    </code></pre>
+  <pre><code>
+[1, 4, 9, 16, 25]
+    </code></pre>
+
+  <!-- FILTRADO -->
+  <h3 class="mt-4">Con filtrado:</h3>
+  <pre><code class="language-python">
+pares = [x for x in range(10) if x % 2 == 0]
+print(pares)
+    </code></pre>
+  <pre><code>
+[0, 2, 4, 6, 8]
+    </code></pre>
+
+  <!-- DICT COMPREHENSION -->
+  <h2 class="mt-4">Dict Comprehension</h2>
+  <p>Ejemplo real para crear un diccionario con pares número-cuadrado:</p>
+  <pre><code class="language-python">
+cuadrados_dict = {x: x**2 for x in range(1, 6)}
+print(cuadrados_dict)
+    </code></pre>
+  <pre><code>
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+    </code></pre>
+
+  <!-- SET COMPREHENSION -->
+  <h2 class="mt-4">Set Comprehension</h2>
+  <p>Ejemplo para crear un conjunto sin duplicados:</p>
+  <pre><code class="language-python">
+letras = {letra for letra in "banana"}
+print(letras)
+    </code></pre>
+  <pre><code>
+{'b', 'a', 'n'}
+    </code></pre>
+
+  <p class="mt-4">Las comprensiones son una forma poderosa y concisa de trabajar con colecciones en Python.</p>
+</div>
+{% endblock %}

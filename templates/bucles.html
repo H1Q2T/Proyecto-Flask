@@ -1,0 +1,45 @@
+<!-- templates/bucles.html -->
+{% extends 'base.html' %}
+
+{% block title %}Bucles - Guía de Python{% endblock %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h1>Bucles en Python</h1>
+  <p>Los bucles permiten repetir bloques de código múltiples veces. En Python existen dos tipos principales: <code>for</code> y <code>while</code>.</p>
+
+  <h3 class="mt-4">Ejemplo real con <code>for</code>:</h3>
+  <pre><code class="language-python">
+for i in range(1, 6):
+    print("Hola", i)
+    </code></pre>
+
+  <h4>Resultado esperado:</h4>
+  <pre><code>
+Hola 1
+Hola 2
+Hola 3
+Hola 4
+Hola 5
+    </code></pre>
+
+  <h3 class="mt-4">Ejemplo real con <code>while</code>:</h3>
+  <pre><code class="language-python">
+numero = 1
+while numero <= 5:
+    print("Número:", numero)
+    numero += 1
+    </code></pre>
+
+  <h4>Resultado esperado:</h4>
+  <pre><code>
+Número: 1
+Número: 2
+Número: 3
+Número: 4
+Número: 5
+    </code></pre>
+
+  <p class="mt-4">Estos ejemplos muestran cómo repetir tareas, ya sea en un rango conocido (<code>for</code>) o hasta que se cumpla una condición (<code>while</code>).</p>
+</div>
+{% endblock %}

@@ -4,53 +4,54 @@
 {% block title %}Comprensiones - Guía de Python{% endblock %}
 
 {% block content %}
-<div class="bg-white p-4 rounded shadow-sm">
-  <h1>Comprensiones en Python</h1>
-  <p>Las comprensiones permiten crear estructuras de datos como listas, diccionarios o conjuntos de forma compacta y eficiente.</p>
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+    <h1>Comprensiones en Python</h1>
+    <p>Las comprensiones son una forma concisa de crear listas, diccionarios o conjuntos en una sola línea. Son útiles, legibles y muy potentes.</p>
 
-  <!-- LIST COMPREHENSION -->
-  <h2 class="mt-4">List Comprehension</h2>
-  <p>Ejemplo real para generar una lista de cuadrados:</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Listas por comprensión</h2>
+    <p>En vez de usar un bucle tradicional, podemos crear una lista directamente así:</p>
+    <pre><code class="language-python">
 cuadrados = [x**2 for x in range(1, 6)]
 print(cuadrados)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 [1, 4, 9, 16, 25]
-    </code></pre>
+  </code></pre>
 
-  <!-- FILTRADO -->
-  <h3 class="mt-4">Con filtrado:</h3>
-  <pre><code class="language-python">
+    <h3 class="mt-4">Filtrar elementos en una comprensión</h3>
+    <p>También puedes añadir condiciones dentro de la comprensión:</p>
+    <pre><code class="language-python">
 pares = [x for x in range(10) if x % 2 == 0]
 print(pares)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 [0, 2, 4, 6, 8]
-    </code></pre>
+  </code></pre>
 
-  <!-- DICT COMPREHENSION -->
-  <h2 class="mt-4">Dict Comprehension</h2>
-  <p>Ejemplo real para crear un diccionario con pares número-cuadrado:</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Diccionarios por comprensión</h2>
+    <p>Igual que con listas, también puedes generar diccionarios directamente:</p>
+    <pre><code class="language-python">
 cuadrados_dict = {x: x**2 for x in range(1, 6)}
 print(cuadrados_dict)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
-    </code></pre>
+  </code></pre>
 
-  <!-- SET COMPREHENSION -->
-  <h2 class="mt-4">Set Comprehension</h2>
-  <p>Ejemplo para crear un conjunto sin duplicados:</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Conjuntos por comprensión</h2>
+    <p>También puedes generar un set directamente desde una cadena o lista:</p>
+    <pre><code class="language-python">
 letras = {letra for letra in "banana"}
 print(letras)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 {'b', 'a', 'n'}
-    </code></pre>
+  </code></pre>
 
-  <p class="mt-4">Las comprensiones son una forma poderosa y concisa de trabajar con colecciones en Python.</p>
+    <p class="mt-4">Las comprensiones son una forma elegante de transformar o filtrar datos en una sola línea de código.</p>
 </div>
 {% endblock %}

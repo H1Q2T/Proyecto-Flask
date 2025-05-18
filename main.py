@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+import io
+import contextlib
 
 app = Flask(__name__)
 
@@ -29,6 +31,23 @@ def poo_animales():
 @app.route('/poo_vehiculos')
 def poo_vehiculos():
     return render_template('poo_vehiculos.html')
+
+@app.route('/flask')
+def flask_info():
+    return render_template('flask.html')
+
+@app.route('/ejecutar', methods=['POST'])
+def ejecutar():
+    data = request.get_json()
+    codigo = data.get("codigo", "")
+    salida = io.StringIO()
+    try:
+        with contextlib.redirect_stdout(salida):
+            exec(codigo, {})
+        resultado = salida.getvalue()
+    except Exception as e:
+        resultado = f"Error: {str(e)}"
+    return jsonify({"resultado": resultado})
 
 @app.errorhandler(404)
 def pagina_no_trobada(e):

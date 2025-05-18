@@ -1,52 +1,51 @@
-<!-- templates/poo_animales.html -->
 {% extends 'base.html' %}
 
 {% block title %}POO: Animales - Guía de Python{% endblock %}
 
 {% block content %}
-<div class="bg-white p-4 rounded shadow-sm">
-  <h1>Programación Orientada a Objetos: Animales</h1>
-  <p>Este ejemplo real muestra cómo aplicar clases y herencia en Python para representar distintos tipos de animales según su alimentación.</p>
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+    <h1>Programación Orientada a Objetos: Animales</h1>
+    <p>La Programación Orientada a Objetos (POO) nos permite modelar el mundo real mediante clases y objetos. En este ejemplo, representamos animales que se alimentan de diferentes formas.</p>
 
-  <h2 class="mt-4">Clase base: <code>Animal</code></h2>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Clase base: <code>Animal</code></h2>
+    <pre><code class="language-python">
 class Animal:
     def __init__(self, nombre):
         self.nombre = nombre
 
     def alimentarse(self):
         print("Este animal se alimenta.")
-    </code></pre>
+  </code></pre>
 
-  <h2 class="mt-4">Subclase: <code>Herbivoro</code></h2>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Subclase: <code>Herbivoro</code></h2>
+    <pre><code class="language-python">
 from animal import Animal
 
 class Herbivoro(Animal):
     def alimentarse(self):
         print(f"{self.nombre} se alimenta de plantas.")
-    </code></pre>
+  </code></pre>
 
-  <h2 class="mt-4">Subclase: <code>Carnivoro</code></h2>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Subclase: <code>Carnivoro</code></h2>
+    <pre><code class="language-python">
 from animal import Animal
 
 class Carnivoro(Animal):
     def alimentarse(self):
         print(f"{self.nombre} se alimenta de carne.")
-    </code></pre>
+  </code></pre>
 
-  <h2 class="mt-4">Subclase: <code>Omnivoro</code></h2>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Subclase: <code>Omnivoro</code></h2>
+    <pre><code class="language-python">
 from animal import Animal
 
 class Omnivoro(Animal):
     def alimentarse(self):
         print(f"{self.nombre} se alimenta de todo.")
-    </code></pre>
+  </code></pre>
 
-  <h2 class="mt-4">Uso de las clases</h2>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Uso de las clases</h2>
+    <pre><code class="language-python">
 from carnivoro import Carnivoro
 from herbivoro import Herbivoro
 from omnivoro import Omnivoro
@@ -58,15 +57,15 @@ oso = Omnivoro("Oso")
 leon.alimentarse()
 vaca.alimentarse()
 oso.alimentarse()
-    </code></pre>
+  </code></pre>
 
-  <h4>Resultado esperado:</h4>
-  <pre><code>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 León se alimenta de carne.
 Vaca se alimenta de plantas.
 Oso se alimenta de todo.
-    </code></pre>
+  </code></pre>
 
-  <p class="mt-4">Este ejemplo demuestra cómo usar clases y herencia para organizar el código y reutilizar comportamientos de forma lógica y clara.</p>
+    <p class="mt-4">Este es un ejemplo claro de cómo se pueden usar las clases y la herencia para crear estructuras jerárquicas y reutilizar código.</p>
 </div>
 {% endblock %}

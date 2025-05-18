@@ -4,19 +4,37 @@
 {% block title %}Inicio - Guía de Python{% endblock %}
 
 {% block content %}
-<div class="p-4 mb-4 bg-white rounded shadow-sm">
+<div class="p-4 mb-4 bg-dark text-light rounded shadow-sm border border-secondary">
   <h1 class="display-4">Bienvenido a la Guía de Python</h1>
-  <p class="lead">Esta guía ha sido creada con Flask y Bootstrap para ayudarte a repasar y consolidar todo lo aprendido en clase sobre Python.</p>
+  <p class="lead">Este sitio ha sido desarrollado con <strong>Flask</strong> y <strong>Bootstrap</strong>, con el objetivo de ayudarte a repasar y entender los fundamentos de Python a través de ejemplos reales que ya has trabajado en clase.</p>
+
   <hr>
-  <p>A lo largo de las diferentes secciones verás ejemplos reales que has trabajado, organizados en bloques temáticos:</p>
+
+  <p>A continuación encontrarás una serie de secciones que explican cada concepto paso a paso, acompañadas de código comentado y resultados esperados:</p>
   <ul>
-    <li><strong>Condicionales:</strong> Uso de <code>if</code>, <code>elif</code> y <code>else</code>.</li>
-    <li><strong>Bucles:</strong> Repetición de acciones con <code>for</code> y <code>while</code>.</li>
-    <li><strong>Estructuras:</strong> Listas, tuplas, diccionarios, conjuntos.</li>
-    <li><strong>Comprensiones:</strong> Sintaxis avanzada para crear estructuras de datos.</li>
-    <li><strong>POO - Animales:</strong> Programación orientada a objetos con ejemplos de clases y herencia.</li>
-    <li><strong>POO - Vehículos:</strong> Proyecto aplicado con herencia y especialización.</li>
+    <li><strong>Condicionales:</strong> Cómo tomar decisiones en tu código con <code>if</code>, <code>elif</code> y <code>else</code>.</li>
+    <li><strong>Bucles:</strong> Repetición de acciones usando <code>for</code> y <code>while</code>.</li>
+    <li><strong>Estructuras de datos:</strong> Manejo de listas, tuplas, diccionarios y sets.</li>
+    <li><strong>Comprensiones:</strong> Crear listas, conjuntos y diccionarios de forma compacta.</li>
+    <li><strong>POO - Animales:</strong> Introducción a la programación orientada a objetos con clases e herencia.</li>
+    <li><strong>POO - Vehículos:</strong> Proyecto práctico de herencia y composición con clases reales.</li>
+    <li><strong>Flask:</strong> Explicación del framework web usado para desarrollar esta guía.</li>
   </ul>
-  <p class="mt-4">Usa el menú de navegación superior para explorar cada sección.</p>
+
+  <p class="mt-4">Usa el menú superior para navegar entre secciones. ¡Explora, estudia y aprende a tu ritmo!</p>
+</div>
+
+<!-- BLOQUE DE CÓDIGO INTERACTIVO FUNCIONAL -->
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+  <h2 class="mt-4">Playground de Python</h2>
+  <p>Escribe código Python, ejecútalo y observa el resultado:</p>
+
+  <div class="playground-block">
+    <textarea class="codigo-ejecutable form-control mb-2" rows="6"># Escribe tu código aquí
+print("Hola mundo")</textarea>
+    <button class="btn btn-success ejecutar-btn">Ejecutar</button>
+    <h6 class="mt-3">Salida:</h6>
+    <pre><code class="salida-ejecutable language-text">Esperando ejecución...</code></pre>
+  </div>
 </div>
 {% endblock %}

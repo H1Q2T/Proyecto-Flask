@@ -4,12 +4,18 @@
 {% block title %}Condicionales - Guía de Python{% endblock %}
 
 {% block content %}
-<div class="bg-white p-4 rounded shadow-sm">
-  <h1>Condicionales en Python</h1>
-  <p>Las condicionales permiten ejecutar diferentes bloques de código según ciertas condiciones. En Python se utilizan las sentencias <code>if</code>, <code>elif</code> y <code>else</code>.</p>
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+    <h1>Condicionales en Python</h1>
+    <p>Las estructuras condicionales permiten que tu programa tome decisiones. Según el valor de una variable o el resultado de una comparación, Python puede ejecutar un bloque de código u otro.</p>
+    <p>Las palabras clave que se utilizan son:</p>
+    <ul>
+        <li><code>if</code> – ejecuta un bloque si la condición es verdadera.</li>
+        <li><code>elif</code> – evalúa una condición adicional si la primera no se cumple.</li>
+        <li><code>else</code> – se ejecuta si ninguna de las condiciones anteriores es verdadera.</li>
+    </ul>
 
-  <h3 class="mt-4">Ejemplo básico:</h3>
-  <pre><code class="language-python">
+    <h3 class="mt-4">Ejemplo real:</h3>
+    <pre><code class="language-python">
 edad = int(input("Introduce tu edad: "))
 
 if edad >= 18:
@@ -18,21 +24,22 @@ elif edad >= 13:
     print("Eres un adolescente.")
 else:
     print("Eres un niño.")
-    </code></pre>
+  </code></pre>
 
-  <h4 class="mt-4">Explicación:</h4>
-  <ul>
-    <li>Si la edad introducida es mayor o igual a 18, se imprime que es mayor de edad.</li>
-    <li>Si no, pero es mayor o igual a 13, se considera adolescente.</li>
-    <li>Si no cumple ninguna de las anteriores, es un niño.</li>
-  </ul>
+    <h4 class="mt-4">¿Qué está haciendo este código?</h4>
+    <p>Primero se pide al usuario su edad. Luego:</p>
+    <ul>
+        <li>Si tiene 18 años o más, se considera adulto.</li>
+        <li>Si tiene entre 13 y 17, se considera adolescente.</li>
+        <li>En cualquier otro caso (menor de 13), se considera niño.</li>
+    </ul>
 
-  <h4 class="mt-4">Resultado esperado (ejemplo):</h4>
-  <pre><code>
+    <h4 class="mt-4">Resultado esperado (si el usuario introduce 15):</h4>
+    <pre><code class="language-text">
 Introduce tu edad: 15
 Eres un adolescente.
-    </code></pre>
+  </code></pre>
 
-  <p class="mt-4">Este tipo de estructuras es muy útil para controlar el flujo del programa dependiendo de decisiones del usuario o del estado de las variables.</p>
+    <p class="mt-4">Las condicionales son esenciales para controlar el flujo de tu programa. Aprender a combinarlas bien te permitirá crear lógica más compleja y dinámica.</p>
 </div>
 {% endblock %}

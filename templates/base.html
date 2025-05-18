@@ -5,11 +5,20 @@
   <meta charset="UTF-8">
   <title>{% block title %}Guía de Python{% endblock %}</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Prism.js -->
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-light">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+<body class="bg-dark text-light">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black mb-4 border-bottom border-secondary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Guía Python</a>
+    <a class="navbar-brand fw-bold" href="/">Guía Python</a>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="/condicionales">Condicionales</a></li>
@@ -18,6 +27,7 @@
         <li class="nav-item"><a class="nav-link" href="/comprensiones">Comprensiones</a></li>
         <li class="nav-item"><a class="nav-link" href="/poo_animales">POO: Animales</a></li>
         <li class="nav-item"><a class="nav-link" href="/poo_vehiculos">POO: Vehículos</a></li>
+        <li class="nav-item"><a class="nav-link" href="/flask">Flask</a></li>
       </ul>
     </div>
   </div>
@@ -26,5 +36,27 @@
 <main class="container">
   {% block content %}{% endblock %}
 </main>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".ejecutar-btn").forEach(btn => {
+      btn.addEventListener("click", async function () {
+        const textarea = this.previousElementSibling;
+        const resultado = this.nextElementSibling.nextElementSibling;
+
+        const codigo = textarea.value;
+
+        const response = await fetch("/ejecutar", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ codigo })
+        });
+
+        const data = await response.json();
+        resultado.textContent = data.resultado || "Sin salida.";
+      });
+    });
+  });
+</script>
+
 </body>
 </html>

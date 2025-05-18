@@ -4,41 +4,40 @@
 {% block title %}Estructuras de Datos - Guía de Python{% endblock %}
 
 {% block content %}
-<div class="bg-white p-4 rounded shadow-sm">
-  <h1>Estructuras de Datos en Python</h1>
-  <p>Python ofrece varias estructuras de datos integradas que permiten almacenar y manipular colecciones de elementos de forma eficiente.</p>
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+    <h1>Estructuras de Datos en Python</h1>
+    <p>Python ofrece estructuras muy potentes para guardar y manipular colecciones de datos. Aquí veremos las más comunes: listas, tuplas, diccionarios y conjuntos.</p>
 
-  <!-- LISTAS -->
-  <h2 class="mt-4">Listas</h2>
-  <p>Las listas son estructuras ordenadas y mutables que permiten almacenar múltiples elementos.</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Listas</h2>
+    <p>Son colecciones ordenadas y modificables. Puedes añadir, eliminar o acceder a elementos fácilmente.</p>
+    <pre><code class="language-python">
 nombres = ["Ana", "Luis", "Carlos", "Marta"]
 print(nombres[0])  # Accede al primer elemento
 nombres.append("Lucía")  # Añade un nuevo elemento
 print(nombres)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 Ana
 ['Ana', 'Luis', 'Carlos', 'Marta', 'Lucía']
-    </code></pre>
+  </code></pre>
 
-  <!-- TUPLAS -->
-  <h2 class="mt-4">Tuplas</h2>
-  <p>Las tuplas son como las listas, pero <strong>inmutables</strong>. No se pueden modificar después de su creación.</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Tuplas</h2>
+    <p>Similares a las listas, pero <strong>inmutables</strong>: no se pueden modificar después de crearse.</p>
+    <pre><code class="language-python">
 coordenadas = (10, 20)
 print("X:", coordenadas[0])
 print("Y:", coordenadas[1])
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 X: 10
 Y: 20
-    </code></pre>
+  </code></pre>
 
-  <!-- DICCIONARIOS -->
-  <h2 class="mt-4">Diccionarios</h2>
-  <p>Los diccionarios almacenan datos en pares clave-valor. Son muy útiles para representar objetos o registros.</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Diccionarios</h2>
+    <p>Guardan pares <code>clave: valor</code>. Muy útiles para representar información estructurada.</p>
+    <pre><code class="language-python">
 alumno = {
     "nombre": "Mario",
     "edad": 18,
@@ -47,25 +46,25 @@ alumno = {
 print(alumno["nombre"])
 alumno["edad"] = 19
 print(alumno)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 Mario
 {'nombre': 'Mario', 'edad': 19, 'curso': 'DAM2'}
-    </code></pre>
+  </code></pre>
 
-  <!-- SETS -->
-  <h2 class="mt-4">Conjuntos (sets)</h2>
-  <p>Los sets son colecciones no ordenadas y sin elementos duplicados. Se usan principalmente para operaciones de conjunto.</p>
-  <pre><code class="language-python">
+    <h2 class="mt-4">Conjuntos (sets)</h2>
+    <p>Son colecciones desordenadas que no permiten elementos duplicados. Se usan para operaciones de conjunto.</p>
+    <pre><code class="language-python">
 colores = {"rojo", "verde", "azul", "rojo"}
 print(colores)
 colores.add("amarillo")
 print(colores)
-    </code></pre>
-  <pre><code>
+  </code></pre>
+    <h4>Resultado:</h4>
+    <pre><code class="language-text">
 {'azul', 'verde', 'rojo'}
 {'amarillo', 'azul', 'verde', 'rojo'}
-    </code></pre>
-
+  </code></pre>
 </div>
 {% endblock %}

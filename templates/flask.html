@@ -1,0 +1,51 @@
+<!-- templates/flask.html -->
+{% extends 'base.html' %}
+
+{% block title %}Flask - Guía de Python{% endblock %}
+
+{% block content %}
+<div class="bg-dark text-light p-4 rounded shadow-sm border border-secondary">
+    <h1>¿Qué es Flask?</h1>
+    <p><strong>Flask</strong> es un microframework de Python usado para desarrollar aplicaciones web de forma sencilla y rápida. Es muy flexible, ideal para aprender o construir proyectos pequeños y medianos.</p>
+
+    <h2 class="mt-4">Instalación</h2>
+    <pre><code class="language-bash">
+pip install flask
+  </code></pre>
+
+    <h2 class="mt-4">Estructura básica de una app Flask</h2>
+    <pre><code class="language-python">
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def inicio():
+    return "Hola, Flask"
+
+if __name__ == '__main__':
+    app.run(debug=True)
+  </code></pre>
+
+    <h2 class="mt-4">Uso de plantillas (templates)</h2>
+    <p>Una de las grandes ventajas de Flask es poder separar el código Python de la parte visual usando plantillas HTML con Jinja2:</p>
+    <pre><code class="language-python">
+from flask import Flask, render_template
+
+@app.route('/inicio')
+def inicio():
+    return render_template('inicio.html')
+  </code></pre>
+
+    <h2 class="mt-4">Ejemplo real del proyecto</h2>
+    <p>Fragmento de tu archivo <code>main.py</code>:</p>
+    <pre><code class="language-python">
+@app.route('/poo_vehiculos')
+def poo_vehiculos():
+    return render_template('poo_vehiculos.html')
+  </code></pre>
+
+    <h2 class="mt-4">Documentación oficial</h2>
+    <p>Puedes aprender más sobre Flask en la web oficial: <a href="https://flask.palletsprojects.com/" target="_blank">https://flask.palletsprojects.com/</a></p>
+</div>
+{% endblock %}
